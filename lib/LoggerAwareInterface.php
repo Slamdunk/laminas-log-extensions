@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Slam\Zend\Log;
+namespace Slam\Laminas\Log;
 
 use Laminas\Log\LoggerInterface;
 

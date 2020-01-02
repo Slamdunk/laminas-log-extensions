@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Slam\Zend\Log\Writer;
+namespace Slam\Laminas\Log\Writer;
 
 use DateTime;
 use Laminas\Log\Logger;
-use Laminas\Log\Writer\Stream as ZendStream;
+use Laminas\Log\Writer\Stream as LaminasStream;
 
-final class RotateStream extends ZendStream
+final class RotateStream extends LaminasStream
 {
     /**
      * On average we write 100 byte at time, and so doing the check

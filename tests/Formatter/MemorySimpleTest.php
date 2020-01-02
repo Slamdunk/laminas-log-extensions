@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Slam\Zend\Log\Tests\Formatter;
+namespace Slam\Laminas\Log\Tests\Formatter;
 
-use Laminas\Log\Formatter\Simple as ZendSimple;
+use Laminas\Log\Formatter\Simple as LaminasSimple;
 use PHPUnit\Framework\TestCase;
-use Slam\Zend\Log\Formatter\MemorySimple;
+use Slam\Laminas\Log\Formatter\MemorySimple;
 
 /**
- * @covers \Slam\Zend\Log\Formatter\MemorySimple
+ * @covers \Slam\Laminas\Log\Formatter\MemorySimple
  */
 final class MemorySimpleTest extends TestCase
 {
@@ -17,7 +17,7 @@ final class MemorySimpleTest extends TestCase
     {
         $formatter = new MemorySimple();
 
-        self::assertInstanceOf(ZendSimple::class, $formatter);
+        self::assertInstanceOf(LaminasSimple::class, $formatter);
         self::assertNotNull($formatter->format([]));
     }
 }

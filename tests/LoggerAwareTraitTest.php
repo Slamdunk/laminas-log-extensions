@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Slam\Zend\Log\Tests;
+namespace Slam\Laminas\Log\Tests;
 
 use Laminas\Log\LoggerInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Slam\Zend\Log\Exception;
-use Slam\Zend\Log\LoggerAwareInterface;
-use Slam\Zend\Log\LoggerAwareTrait;
+use Slam\Laminas\Log\Exception;
+use Slam\Laminas\Log\LoggerAwareInterface;
+use Slam\Laminas\Log\LoggerAwareTrait;
 
 /**
- * @covers \Slam\Zend\Log\LoggerAwareTrait
+ * @covers \Slam\Laminas\Log\LoggerAwareTrait
  */
 final class LoggerAwareTraitTest extends TestCase
 {

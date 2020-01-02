@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Slam\Zend\Log\Tests\Writer;
+namespace Slam\Laminas\Log\Tests\Writer;
 
 use Laminas\Log\Formatter\Simple as SimpleFormatter;
 use PHPUnit\Framework\TestCase;
-use Slam\Zend\Log\Writer\RotateStream;
+use Slam\Laminas\Log\Writer\RotateStream;
 
 /**
- * @covers \Slam\Zend\Log\Writer\RotateStream
+ * @covers \Slam\Laminas\Log\Writer\RotateStream
  */
 final class RotateStreamTest extends TestCase
 {

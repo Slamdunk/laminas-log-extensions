@@ -1,8 +1,8 @@
-# Slam \[Zend|Laminas\]\Log extensions
+# Slam Laminas\Log extensions
 
-[![Build Status](https://travis-ci.org/Slamdunk/zend-log-extensions.svg?branch=master)](https://travis-ci.org/Slamdunk/zend-log-extensions)
-[![Code Coverage](https://scrutinizer-ci.com/g/Slamdunk/zend-log-extensions/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Slamdunk/zend-log-extensions/?branch=master)
-[![Packagist](https://img.shields.io/packagist/v/slam/zend-log-extensions.svg)](https://packagist.org/packages/slam/zend-log-extensions)
+[![Build Status](https://travis-ci.org/Slamdunk/laminas-log-extensions.svg?branch=master)](https://travis-ci.org/Slamdunk/laminas-log-extensions)
+[![Code Coverage](https://scrutinizer-ci.com/g/Slamdunk/laminas-log-extensions/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Slamdunk/laminas-log-extensions/?branch=master)
+[![Packagist](https://img.shields.io/packagist/v/slam/laminas-log-extensions.svg)](https://packagist.org/packages/slam/laminas-log-extensions)
 
 Extensions for [Laminas\Log](https://github.com/laminas/laminas-log)
 
@@ -10,7 +10,7 @@ Extensions for [Laminas\Log](https://github.com/laminas/laminas-log)
 
 Execute:
 
-`composer require slam/zend-log-extensions`
+`composer require slam/laminas-log-extensions`
 
 ## Usage
 
@@ -18,10 +18,10 @@ The main functionality of this package is the RotateStream writer.
 PHP cannot handle files larger than 2 GB, so if you log a lot you can end up
 losing some if you reach this limit.
 
-`Slam\Zend\Log\Writer\RotateStream` rotates the write when it reaches ~1.5 GB.
+`Slam\Laminas\Log\Writer\RotateStream` rotates the write when it reaches ~1.5 GB.
 
 ```php
-use Slam\Zend\Log\Writer\RotateStream;
+use Slam\Laminas\Log\Writer\RotateStream;
 use Laminas\Log\Formatter\Simple;
 use Laminas\Log\Logger;
 

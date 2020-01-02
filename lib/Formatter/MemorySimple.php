@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Slam\Zend\Log\Formatter;
+namespace Slam\Laminas\Log\Formatter;
 
-use Laminas\Log\Formatter\Simple as ZendSimple;
+use Laminas\Log\Formatter\Simple as LaminasSimple;
 
-final class MemorySimple extends ZendSimple
+final class MemorySimple extends LaminasSimple
 {
     public const DEFAULT_FORMAT = '%timestamp% %priorityName% > %message% %extra%';
 

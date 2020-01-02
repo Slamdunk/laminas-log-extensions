@@ -1,5 +1,5 @@
 {
-    "name": "slam/zend-log-extensions",
+    "name": "slam/laminas-log-extensions",
     "description": "Slam extensions for laminas/laminas-log",
     "license": "MIT",
     "authors": [
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Slam\\Zend\\Log\\": "lib/"
+            "Slam\\Laminas\\Log\\": "lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Slam\\Zend\\Log\\Tests\\": "tests/"
+            "Slam\\Laminas\\Log\\Tests\\": "tests/"
         }
     }
 }

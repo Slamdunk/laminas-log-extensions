@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Slam\Zend\Log\Exception;
+namespace Slam\Laminas\Log\Exception;
 
 interface ExceptionInterface
 {
