@@ -10,7 +10,6 @@ parameters:
         - lib/
         - tests/
     ignoreErrors:
-        - '#Function \w+ is unsafe to use, rely on Symfony component .+ instead#'
         -
             message: '#Parameter \#1 \$fp of function fclose expects resource, Laminas\\Log\\Writer\\Stream\|null given#'
             path: %currentWorkingDirectory%/lib/Writer/RotateStream.php

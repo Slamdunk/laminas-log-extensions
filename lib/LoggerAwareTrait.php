@@ -10,10 +10,7 @@ use Laminas\Log\Writer\Noop;
 
 trait LoggerAwareTrait
 {
-    /**
-     * @var null|LoggerInterface
-     */
-    private $logger;
+    private ?LoggerInterface $logger = null;
 
     public function setLogger(LoggerInterface $logger): void
     {

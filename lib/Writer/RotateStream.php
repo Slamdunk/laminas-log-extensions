@@ -13,18 +13,14 @@ final class RotateStream extends LaminasStream
     /**
      * On average we write 100 byte at time, and so doing the check
      * once every 10.000.000 bytes written we can save resources.
-     *
-     * @var int
      */
-    private $checkProbability = 100000;
+    private int $checkProbability = 100000;
 
     /**
      * On linux, PHP is able to write only 2.147.483.647 bytes.
      * Let's rotate the file at 75% of this size.
-     *
-     * @var int
      */
-    private $maxFileSize = 1610612735;
+    private int $maxFileSize = 1610612735;
 
     /**
      * @var null|mixed
@@ -36,10 +32,7 @@ final class RotateStream extends LaminasStream
      */
     private $mode;
 
-    /**
-     * @var int
-     */
-    private $inc = 1;
+    private int $inc = 1;
 
     public function __construct($streamOrUrl, $mode = null, $logSeparator = null)
     {
@@ -88,7 +81,7 @@ final class RotateStream extends LaminasStream
         return $this->maxFileSize;
     }
 
-    protected function doWrite(array $event)
+    protected function doWrite(array $event): void
     {
         if ($this->inc === $this->checkProbability && \is_file($this->streamOrUrl)) {
             if (\filesize($this->streamOrUrl) > $this->maxFileSize) {
