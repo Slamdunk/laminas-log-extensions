@@ -10,7 +10,7 @@ parameters:
         - tests/
     ignoreErrors:
         -
-            message: '#Parameter \#1 \$stream of function fclose expects resource, Laminas\\Log\\Writer\\Stream\|null given#'
+            message: '#Parameter \#1 \$\w+ of function fclose expects resource, Laminas\\Log\\Writer\\Stream\|null given#'
             path: %currentWorkingDirectory%/lib/Writer/RotateStream.php
         -
             message: '#Property Laminas\\Log\\Writer\\Stream::\$stream \(Laminas\\Log\\Writer\\Stream\|null\) does not accept resource\|false#'
