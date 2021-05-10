@@ -21,18 +21,15 @@ final class LoggerAwareTraitTest extends TestCase
      */
     private $logger;
 
-    /**
-     * @var LoggerAwareInterface
-     */
-    private $loggerAware;
+    private LoggerAwareInterface $loggerAware;
 
     protected function setUp(): void
     {
         $this->logger = $this->createMock(LoggerInterface::class);
 
-        /** @var LoggerAwareInterface $loggerAware */
-        $loggerAware       = $this->getObjectForTrait(LoggerAwareTrait::class);
-        $this->loggerAware = $loggerAware;
+        $this->loggerAware = new class() implements LoggerAwareInterface {
+            use LoggerAwareTrait;
+        };
     }
 
     public function testSetAndRetrieve(): void

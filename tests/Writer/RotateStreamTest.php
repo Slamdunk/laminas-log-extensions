@@ -13,15 +13,9 @@ use Slam\Laminas\Log\Writer\RotateStream;
  */
 final class RotateStreamTest extends TestCase
 {
-    /**
-     * @var string
-     */
-    private $filename;
+    private string $filename;
 
-    /**
-     * @var RotateStream
-     */
-    private $writer;
+    private RotateStream $writer;
 
     protected function setUp(): void
     {
