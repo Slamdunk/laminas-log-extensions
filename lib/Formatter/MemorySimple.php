@@ -10,10 +10,12 @@ final class MemorySimple extends LaminasSimple
 {
     public const DEFAULT_FORMAT = '%timestamp% %priorityName% > %message% %extra%';
 
-    /**
-     * @var string
-     */
-    protected $dateTimeFormat = 'Y-m-d+H:i:s';
+    public function __construct($format = null, $dateTimeFormat = null)
+    {
+        $dateTimeFormat ??= 'Y-m-d+H:i:s';
+
+        parent::__construct($format, $dateTimeFormat);
+    }
 
     public function format($event)
     {
