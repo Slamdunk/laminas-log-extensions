@@ -10,11 +10,11 @@ use Laminas\Log\Writer\Noop;
 
 trait LoggerAwareTrait
 {
-    private ?LoggerInterface $logger = null;
+    private LoggerInterface $logger;
 
     public function setLogger(LoggerInterface $logger): void
     {
-        if (null !== $this->logger) {
+        if (isset($this->logger)) {
             throw new Exception\RuntimeException('Logger already set, cannot be overwritten');
         }
 
@@ -23,7 +23,7 @@ trait LoggerAwareTrait
 
     public function getLogger(): LoggerInterface
     {
-        if (null === $this->logger) {
+        if (! isset($this->logger)) {
             $this->logger = new Logger();
             $this->logger->addWriter(new Noop());
         }

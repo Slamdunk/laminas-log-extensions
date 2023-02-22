@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/slam/laminas-log-extensions.svg)](https://packagist.org/packages/slam/laminas-log-extensions)
 [![Downloads](https://img.shields.io/packagist/dt/slam/laminas-log-extensions.svg)](https://packagist.org/packages/slam/laminas-log-extensions)
-[![Integrate](https://github.com/Slamdunk/laminas-log-extensions/workflows/Integrate/badge.svg?branch=master)](https://github.com/Slamdunk/laminas-log-extensions/actions)
+[![Integrate](https://github.com/Slamdunk/laminas-log-extensions/workflows/CI/badge.svg?branch=master)](https://github.com/Slamdunk/laminas-log-extensions/actions)
 [![Code Coverage](https://codecov.io/gh/Slamdunk/laminas-log-extensions/coverage.svg?branch=master)](https://codecov.io/gh/Slamdunk/laminas-log-extensions?branch=master)
 
 Extensions for [Laminas\Log](https://github.com/laminas/laminas-log)

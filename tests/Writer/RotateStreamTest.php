@@ -5,16 +5,14 @@ declare(strict_types=1);
 namespace Slam\Laminas\Log\Tests\Writer;
 
 use Laminas\Log\Formatter\Simple as SimpleFormatter;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Slam\Laminas\Log\Writer\RotateStream;
 
-/**
- * @covers \Slam\Laminas\Log\Writer\RotateStream
- */
+#[CoversClass(RotateStream::class)]
 final class RotateStreamTest extends TestCase
 {
     private string $filename;
-
     private RotateStream $writer;
 
     protected function setUp(): void

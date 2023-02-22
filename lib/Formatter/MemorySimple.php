@@ -10,14 +10,14 @@ final class MemorySimple extends LaminasSimple
 {
     public const DEFAULT_FORMAT = '%timestamp% %priorityName% > %message% %extra%';
 
-    public function __construct($format = null, $dateTimeFormat = null)
+    public function __construct(?string $format = null, ?string $dateTimeFormat = null)
     {
         $dateTimeFormat ??= 'Y-m-d+H:i:s';
 
         parent::__construct($format, $dateTimeFormat);
     }
 
-    public function format($event)
+    public function format($event): string
     {
         return \number_format(\memory_get_usage(true) / 1000000, 1, ',', '.') . ' ' . parent::format($event);
     }

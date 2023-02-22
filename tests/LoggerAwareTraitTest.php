@@ -5,21 +5,17 @@ declare(strict_types=1);
 namespace Slam\Laminas\Log\Tests;
 
 use Laminas\Log\LoggerInterface;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Slam\Laminas\Log\Exception;
 use Slam\Laminas\Log\LoggerAwareInterface;
 use Slam\Laminas\Log\LoggerAwareTrait;
 
-/**
- * @covers \Slam\Laminas\Log\LoggerAwareTrait
- */
+#[CoversClass(LoggerAwareTrait::class)]
 final class LoggerAwareTraitTest extends TestCase
 {
-    /**
-     * @var MockObject&LoggerInterface
-     */
-    private $logger;
+    private MockObject&LoggerInterface $logger;
 
     private LoggerAwareInterface $loggerAware;
 

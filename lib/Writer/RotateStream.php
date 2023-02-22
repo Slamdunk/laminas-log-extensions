@@ -11,7 +11,7 @@ use Laminas\Log\Writer\Stream as LaminasStream;
 final class RotateStream extends LaminasStream
 {
     /**
-     * On average we write 100 byte at time, and so doing the check
+     * On average, we write 100 byte at time, and so doing the check
      * once every 10.000.000 bytes written we can save resources.
      */
     private int $checkProbability = 100000;
@@ -22,19 +22,13 @@ final class RotateStream extends LaminasStream
      */
     private int $maxFileSize = 1610612735;
 
-    /**
-     * @var null|mixed
-     */
-    private $streamOrUrl;
+    private ?string $streamOrUrl;
 
-    /**
-     * @var null|mixed|string
-     */
-    private $mode;
+    private string $mode;
 
     private int $inc = 1;
 
-    public function __construct($streamOrUrl, $mode = null, $logSeparator = null)
+    public function __construct(array|string $streamOrUrl, ?string $mode = null, ?string $logSeparator = null)
     {
         if (\is_array($streamOrUrl)) {
             $mode           = $streamOrUrl['mode']          ?? null;
@@ -53,10 +47,7 @@ final class RotateStream extends LaminasStream
         parent::__construct($this->streamOrUrl, $this->mode, $logSeparator);
     }
 
-    /**
-     * @return null|mixed
-     */
-    public function getStreamname()
+    public function getStreamname(): ?string
     {
         return $this->streamOrUrl;
     }
@@ -83,6 +74,8 @@ final class RotateStream extends LaminasStream
 
     protected function doWrite(array $event): void
     {
+        \assert(null !== $this->streamOrUrl);
+
         if ($this->inc === $this->checkProbability && \is_file($this->streamOrUrl)) {
             if (\filesize($this->streamOrUrl) > $this->maxFileSize) {
                 parent::doWrite([
@@ -96,6 +89,8 @@ final class RotateStream extends LaminasStream
                 $this->rotateFile();
             }
 
+            \assert(null !== $this->streamOrUrl);
+
             \clearstatcache(true, $this->streamOrUrl);
             $this->inc = 1;
         } else {
@@ -107,6 +102,9 @@ final class RotateStream extends LaminasStream
 
     private function rotateFile(): void
     {
+        \assert(null !== $this->streamOrUrl);
+        \assert(null !== $this->stream);
+
         \fclose($this->stream);
 
         $ext = 1;
