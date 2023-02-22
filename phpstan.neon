@@ -1,20 +1,10 @@
 includes:
-    - phar://phpstan.phar/conf/config.levelmax.neon
     - vendor/phpstan/phpstan-phpunit/extension.neon
     - vendor/slam/phpstan-extensions/conf/slam-rules.neon
+    - phpstan-baseline.neon
 
 parameters:
-    checkMissingIterableValueType: false
+    level: max
     paths:
         - lib/
         - tests/
-    ignoreErrors:
-        -
-            message: '#Parameter \#1 \$\w+ of function fclose expects resource, Laminas\\Log\\Writer\\Stream\|null given#'
-            path: %currentWorkingDirectory%/lib/Writer/RotateStream.php
-        -
-            message: '#Property Laminas\\Log\\Writer\\Stream::\$stream \(Laminas\\Log\\Writer\\Stream\|null\) does not accept resource\|false#'
-            path: %currentWorkingDirectory%/lib/Writer/RotateStream.php
-        -
-            message: '#Argument of an invalid type array<int, string>\|false supplied for foreach, only iterables are supported#'
-            path: %currentWorkingDirectory%/tests/Writer/RotateStreamTest.php

@@ -1,0 +1,31 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Slam\\\\Laminas\\\\Log\\\\Formatter\\\\MemorySimple\\:\\:format\\(\\) has parameter \\$event with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Formatter/MemorySimple.php
+
+		-
+			message: "#^Method Slam\\\\Laminas\\\\Log\\\\Writer\\\\RotateStream\\:\\:__construct\\(\\) has parameter \\$streamOrUrl with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Writer/RotateStream.php
+
+		-
+			message: "#^Method Slam\\\\Laminas\\\\Log\\\\Writer\\\\RotateStream\\:\\:doWrite\\(\\) has parameter \\$event with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Writer/RotateStream.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function fclose expects resource, Laminas\\\\Log\\\\Writer\\\\Stream given\\.$#"
+			count: 1
+			path: lib/Writer/RotateStream.php
+
+		-
+			message: "#^Property Laminas\\\\Log\\\\Writer\\\\Stream\\:\\:\\$stream \\(Laminas\\\\Log\\\\Writer\\\\Stream\\|null\\) does not accept resource\\|false\\.$#"
+			count: 1
+			path: lib/Writer/RotateStream.php
+
+		-
+			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: tests/Writer/RotateStreamTest.php
