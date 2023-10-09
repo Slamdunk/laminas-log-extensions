@@ -31,8 +31,8 @@ final class RotateStream extends LaminasStream
     public function __construct(array|string $streamOrUrl, ?string $mode = null, ?string $logSeparator = null)
     {
         if (\is_array($streamOrUrl)) {
+            parent::__construct($streamOrUrl);
             $mode           = $streamOrUrl['mode']          ?? null;
-            $logSeparator   = $streamOrUrl['log_separator'] ?? null;
             $streamOrUrl    = $streamOrUrl['stream']        ?? null;
         }
 
@@ -43,8 +43,6 @@ final class RotateStream extends LaminasStream
 
         $this->streamOrUrl = $streamOrUrl;
         $this->mode        = $mode;
-
-        parent::__construct($this->streamOrUrl, $this->mode, $logSeparator);
     }
 
     public function getStreamname(): ?string
